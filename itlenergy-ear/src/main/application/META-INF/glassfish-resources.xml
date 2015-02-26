@@ -5,8 +5,8 @@
             datasource-classname="org.postgresql.ds.PGConnectionPoolDataSource"
             pool-resize-quantity="2" max-pool-size="32" steady-pool-size="2"
             statement-timeout-in-seconds="60" >
-        <property name="serverName" value="localhost" />
-        <property name="portNumber" value="5433" />
+        <property name="serverName" value="postgres" />
+        <property name="portNumber" value="5432" />
         <property name="databaseName" value="apatsche" />
         <property name="User" value="postgres" />
         <property name="Password" value="postgres" />
