@@ -13,7 +13,7 @@ import javax.servlet.http.*;
  * 
  * @author Gordon Mackenzie-Leigh
  */
-@WebFilter("/api/*")
+@WebFilter(filterName = "CorsFilter", urlPatterns = {"/*"})
 public class CorsFilter implements Filter {
 
 	public CorsFilter() { }

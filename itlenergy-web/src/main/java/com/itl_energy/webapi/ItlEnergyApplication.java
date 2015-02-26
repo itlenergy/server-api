@@ -4,6 +4,11 @@
  */
 package com.itl_energy.webapi;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.jaxrs.json.JacksonJaxbJsonProvider;
+import com.fasterxml.jackson.module.jaxb.JaxbAnnotationModule;
+
+import java.util.HashSet;
 import java.util.Set;
 import javax.ws.rs.core.MediaType;
 
@@ -28,6 +33,16 @@ public class ItlEnergyApplication extends javax.ws.rs.core.Application {
         }
         addRestResourceClasses(resources);
         return resources;
+    }
+
+    @Override
+    public Set<Object> getSingletons() {
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.registerModule(new JaxbAnnotationModule());
+
+        Set<Object> singletons = new HashSet<>();
+        singletons.add(new JacksonJaxbJsonProvider(mapper, JacksonJaxbJsonProvider.DEFAULT_ANNOTATIONS));
+        return singletons;
     }
 
     /**

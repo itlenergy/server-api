@@ -45,10 +45,10 @@
                 <version>0.1.2</version>
                 <configuration>
                     <imageName>itlenergy/server-api</imageName>
-                    <baseImage>stugo/embedded-glassfish</baseImage>
+                    <dockerDirectory>docker</dockerDirectory>
                     <resources>
                         <resource>
-                            <targetPath>/app</targetPath>
+                            <targetPath>/</targetPath>
                             <directory>${project.build.directory}</directory>
                             <include>${project.build.finalName}.ear</include>
                         </resource>
